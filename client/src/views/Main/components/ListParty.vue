@@ -1,49 +1,34 @@
 <template>
-  <div class="searchbar">
-    <input
-      class="searchInput"
-      type="text"
-      placeholder="Search Party"
-      v-model="searchTerm"
-      @input="handleSearch"
-      @click.stop="showModal = true"
-    />
-    <div v-if="showModal" class="modal" ref="modal">
+  <div class="listParty">
+    <span class="button-listParty" @click.stop="showLoginModal = true">
+      <font-awesome-icon icon="fa-solid fa-plus" />
+
+      Create
+    </span>
+
+    <!-- login modal -->
+    <div v-if="showLoginModal" class="modal" ref="modal">
       <div class="modal-content" @click.stop>
         <!-- location input -->
         <input
           class="filterInput"
-          type="text"
+          type="email"
           id="location"
           v-model="location"
-          placeholder="Type City"
-        />
-        <!-- start date and hour -->
-        <input
-          class="filterInput"
-          type="datetime-local"
-          id="startDate"
-          v-model="startDate"
-          placeholder="Start Day & Hour"
-        />
-        <!-- end date and hour -->
-        <input
-          class="filterInput"
-          type="datetime-local"
-          id="endDate"
-          v-model="endDate"
-          placeholder="End Day & Hour"
+          placeholder="Your email"
         />
         <!-- number of tickets input -->
         <input
           class="filterInput"
-          type="number"
+          type="password"
           id="numberTickets"
           v-model="numTickets"
-          placeholder="How many ticket or person?"
+          placeholder="Your password"
         />
 
-        <button @click="submitFilters">Submit</button>
+        <button class="btn-login" @click="submitFilters">Login</button>
+        <button class="btn-signup" @click="submitFilters">Sign up</button>
+        <p>Login to proceed...</p>
       </div>
     </div>
   </div>
@@ -55,7 +40,7 @@
   export default defineComponent({
     setup() {
       const searchTerm = ref("");
-      const showModal = ref(false);
+      const showLoginModal = ref(false);
       const location = ref("");
       const startDate = ref("");
       const endDate = ref("");
@@ -65,11 +50,11 @@
 
       const handleClickOutside = (event: MouseEvent) => {
         if (modal.value && !modal.value.contains(event.target as Node)) {
-          showModal.value = false;
+          showLoginModal.value = false;
         }
       };
 
-      watch(showModal, (newValue) => {
+      watch(showLoginModal, (newValue) => {
         if (newValue) {
           window.addEventListener("click", handleClickOutside);
         } else {
@@ -88,13 +73,13 @@
         console.log("End Date:", endDate.value);
         console.log("Number of Tickets:", numTickets.value);
         // implement the logic to send filter date to the backend server
-        showModal.value = false;
+        showLoginModal.value = false;
       };
 
       return {
         modal,
         searchTerm,
-        showModal,
+        showLoginModal,
         location,
         startDate,
         endDate,
@@ -108,28 +93,30 @@
 
 <style scoped>
   @media (max-width: 743px) {
-    .searchbar {
+    .listParty {
       width: 100%;
     }
 
-    .searchInput {
+    .button-listParty {
       width: 100%;
     }
   }
-  .searchbar {
-    flex-grow: 1;
+  .listParty {
     padding-left: 0.8rem;
     padding-right: 1.4rem;
   }
+  p {
+    margin-left: 2%;
+    font-size: 9pt;
+    opacity: 0.7;
+  }
 
-  .searchInput {
+  .button-listParty {
     font-size: 10pt;
     font-weight: 600;
-    color: rgb(156, 144, 144);
-    background-color: rgb(30 35 35 / 0.8);
+    color: rgb(242, 232, 232);
     border: none;
-    padding: 0.5rem 0.9rem;
-    border-radius: 8px;
+    padding: 0rem 0.8rem;
     cursor: pointer;
   }
 
@@ -143,11 +130,6 @@
     padding: 0.5rem 0.9rem;
     border-radius: 8px;
     cursor: pointer;
-  }
-
-  h2 {
-    font-size: 14pt;
-    font-weight: 900;
   }
 
   .modal {
@@ -175,21 +157,31 @@
   }
 
   .close {
-    position: absolute;
-    top: 0.5rem;
-    right: 4%;
-
+    position: relative;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
   }
 
-  button {
-    background-color: #1c3b69;
+  .btn-login {
+    background-color: #3e9b26;
     width: 100%;
     border: none;
     color: white;
-    margin-top: 14px;
+    margin-top: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 10pt;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+  .btn-signup {
+    background-color: #3e9b26;
+    width: 100%;
+    border: none;
+    color: white;
+    margin-top: 10px;
     padding: 0.5rem 1rem;
     font-size: 10pt;
     font-weight: 600;

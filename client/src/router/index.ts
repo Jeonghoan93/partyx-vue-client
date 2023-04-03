@@ -6,7 +6,7 @@ import AuthRouter from "@/views/Auth/router";
 import EventsRouter from "@/views/Events/router";
 import EventDetailRouter from "@/views/EventDetail/router";
 import HostDashboardRouter from "@/views/HostDashboard/router";
-import CreateEventRouter from "@/views/CreateEvent/router";
+import EventFormRouter from "@/views/EventForm/router";
 import EditEventRouter from "@/views/EditEvent/router";
 
 const routes = [
@@ -16,7 +16,7 @@ const routes = [
   ...EventsRouter,
   ...EventDetailRouter,
   ...HostDashboardRouter,
-  ...CreateEventRouter,
+  ...EventFormRouter,
   ...EditEventRouter,
 ];
 

@@ -63,7 +63,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
   import api from "../../../services/api";
 
   export default {
@@ -73,6 +73,7 @@
         lastName: "",
         email: "",
         password: "",
+        location: "",
         confirmPassword: "",
       };
     },

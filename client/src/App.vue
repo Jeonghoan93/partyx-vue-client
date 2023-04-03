@@ -13,7 +13,7 @@
 <style>
   html,
   body {
-    font-family: "Cereal", sans-serif;
+    font-family: "Roboto", sans-serif; /* You can use any font family you prefer */
     margin: 0;
     padding: 0;
     width: 100%;

@@ -5,22 +5,27 @@
       <main>
         <router-view />
       </main>
+      <FooterSmallMain />
     </div>
-    <FooterMain />
+    <FooterBigMain />
   </div>
 </template>
 
 <script lang="ts">
   import { defineComponent } from "vue";
-  import NavbarMain from "../components/Navbar.vue";
-  import FooterMain from "../components/Footer.vue";
+
+  import NavbarMain from "../components/NavbarMain.vue";
+  import FooterSmallMain from "../components/footers/FooterSmallMain.vue";
+  import FooterBigMain from "../components/footers/FooterBigMain.vue";
 
   export default defineComponent({
     name: "MainLayout",
     components: {
       NavbarMain,
-      FooterMain,
+      FooterSmallMain,
+      FooterBigMain,
     },
+    setup() {},
   });
 </script>
 
@@ -29,10 +34,7 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-    background-position: center;
-    background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url("../assets/bg.jpeg");
+
     margin: 0 auto;
   }
 

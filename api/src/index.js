@@ -4,7 +4,12 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 
-const { eventRoutes, hostRoutes, userRoutes } = require("./api/routes");
+const {
+  eventRoutes,
+  hostRoutes,
+  userRoutes,
+  geocodingRoutes,
+} = require("./api/routes");
 
 const connectDB = require("./config/db");
 
@@ -24,6 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/users", userRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/hosts", hostRoutes);
+app.use("/api/geocode", geocodingRoutes);
 
 app.get("/", (req, res) => {
   res.send("Welcome to PartyX API!");

@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar" :class="{ active: isActive }">
+    <router-link class="logo" to="/"> PartyX</router-link>
     <SearchBar v-if="isActive" />
-    <router-link v-if="!isActive" class="logo" to="/"> PartyX</router-link>
+    <ListParty v-if="isActive" />
+
     <header class="nav-links">
       <router-link
         v-show="!isActive && !isLoggedIn()"
@@ -34,11 +36,13 @@
   import { useRouter, useRoute } from "vue-router";
 
   import SearchBar from "./SearchBar.vue";
+  import ListParty from "./ListParty.vue";
 
   export default defineComponent({
     name: "NavbarMain",
     components: {
       SearchBar,
+      ListParty,
     },
     setup() {
       const store = useStore();
@@ -93,7 +97,7 @@
     top: 0;
     height: 27px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     background-color: rgb(30 35 35 / 0.8);
     padding: 1rem;
@@ -111,14 +115,13 @@
   }
 
   .logo {
-    position: absolute;
-    left: 2%;
+    position: relative;
     text-decoration: none;
     border: none;
-    font-size: 14pt;
+    font-size: 13pt;
     font-weight: 800;
     color: white;
-    padding: 0.5rem 0.9rem;
+    padding: 0rem 0.2rem;
     border-radius: 4px;
     cursor: pointer;
   }
@@ -131,7 +134,7 @@
     font-size: 10pt;
     font-weight: 600;
     color: white;
-    padding: 0.5rem 0.9rem;
+    padding: 0.4rem 0.8rem;
 
     border-radius: 4px;
     cursor: pointer;
