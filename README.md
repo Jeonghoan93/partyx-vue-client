@@ -75,41 +75,60 @@ partyx/
 |   |-- README.md
 
 
-|
-|-- backend/
-|   |-- src/
-|   |   |-- api/
-|   |   |   |-- controllers/
-|   |   |   |   |-- authController.js
-|   |   |   |   |-- eventController.js
-|   |   |   |   |-- hostController.js
-|   |   |   |-- middlewares/
-|   |   |   |   |-- authMiddleware.js
-|   |   |   |   |-- hostMiddleware.js
-|   |   |   |   |-- errorHandler.js
-|   |   |   |-- models/
-|   |   |   |   |-- User.js
-|   |   |   |   |-- Event.js
-|   |   |   |   |-- Host.js
-|   |   |   |-- routes/
-|   |   |   |   |-- authRoutes.js
-|   |   |   |   |-- eventRoutes.js
-|   |   |   |   |-- hostRoutes.js
-|   |   |   |-- validations/
-|   |   |   |   |-- authValidation.js
-|   |   |   |   |-- eventValidation.js
-|   |   |   |   |-- hostValidation.js
-|   |   |-- config/
-|   |   |   |-- db.js
-|   |   |   |-- environment.js
-|   |   |-- utils/
-|   |   |   |-- firebase.js
-|   |   |   |-- cloudinary.js
-|   |   |-- app.js
-|   |-- package.json
-|   |-- .env
-|   |-- .gitignore
-|   |-- README.md
-|
-|-- .gitignore
-|-- README.md
+-backend/
+│
+├── src/
+│   ├── main.ts
+│   ├── app.module.ts
+│   ├── app.controller.ts
+│   ├── app.service.ts
+│   │
+│   ├── config/
+│   │   └── configuration.ts
+│   │
+│   ├── user/
+│   │   ├── user.module.ts
+│   │   ├── user.controller.ts
+│   │   ├── user.service.ts
+│   │   └── user.entity.ts
+│   │
+│   ├── event/
+│   │   ├── event.module.ts
+│   │   ├── event.controller.ts
+│   │   ├── event.service.ts
+│   │   └── event.entity.ts
+│   │
+│   ├── booking/
+│   │   ├── booking.module.ts
+│   │   ├── booking.controller.ts
+│   │   ├── booking.service.ts
+│   │   └── booking.entity.ts
+│   │
+│   ├── review/
+│   │   ├── review.module.ts
+│   │   ├── review.controller.ts
+│   │   ├── review.service.ts
+│   │   └── review.entity.ts
+│   │
+│   ├── notifications/
+│   │   ├── notifications.module.ts
+│   │   ├── notifications.controller.ts
+│   │   └── notifications.service.ts
+│   │
+│   └── common/
+│       ├── filters/
+│       │   └── http-exception.filter.ts
+│       │
+│       └── middlewares/
+│           └── logger.middleware.ts
+│
+├── test/
+│   ├── jest-e2e.json
+│   └── app.e2e-spec.ts
+│
+├── nest-cli.json
+├── tsconfig.build.json
+├── tsconfig.json
+├── package.json
+└── README.md
+

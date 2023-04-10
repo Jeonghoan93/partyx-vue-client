@@ -21,15 +21,7 @@
             required
           />
         </div>
-        <div class="input-group">
-          <input
-            placeholder="Your city"
-            type="text"
-            id="location"
-            v-model="location"
-            required
-          />
-        </div>
+
         <div class="input-group">
           <input
             placeholder="Email"
@@ -73,7 +65,6 @@
         lastName: "",
         email: "",
         password: "",
-        location: "",
         confirmPassword: "",
       };
     },
@@ -85,19 +76,22 @@
         }
 
         try {
-          await api.post("/api/users/register", {
+          const res = await api.post("/users/register", {
             firstName: this.firstName,
             lastName: this.lastName,
             email: this.email,
             password: this.password,
           });
 
+          // log data
+          console.log(res.data);
+
           // alert the user that registration was successful
           alert("Registration successful! Redirecting to the login page.");
 
           // direct to the login page
           setTimeout(() => {
-            this.$router.push("/login");
+            this.$router.push("/auth/login");
           }, 1000);
         } catch (error) {
           console.error("Error during registration", error);

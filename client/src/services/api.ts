@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://locahost:3000/api", // VUE_APP_API_BASE_URL
+  baseURL: "http://localhost:3000/api", // VUE_APP_API_BASE_URL
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
