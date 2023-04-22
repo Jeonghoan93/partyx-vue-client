@@ -12,7 +12,7 @@ export class SearchService {
   ) {}
 
   async findUsers(query: Query): Promise<Users[]> {
-    const take = 2;
+    const take = Number(query.take) || 10;
     const currentPage = Number(query.page) || 1;
     const skip = take * (currentPage - 1);
 

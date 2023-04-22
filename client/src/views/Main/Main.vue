@@ -10,7 +10,7 @@
 
 <script lang="ts">
   import { defineComponent } from "vue";
-  import FooterBigMain from "../components/footers/FooterBigMain.vue";
+  import FooterBigMain from "./components/FooterBigMain.vue";
 
   export default defineComponent({
     name: "Main",
@@ -21,7 +21,7 @@
 <style scoped>
   .home-container {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url("../assets/bg.jpeg");
+      url("../../assets/bgMain.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

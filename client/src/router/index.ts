@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import MainRouter from "@/views/Main/router";
 import HomeRouter from "@/views/Home/router";
 import EventsRouter from "@/views/Events/router";
 import EventDetailRouter from "@/views/EventDetail/router";
@@ -30,7 +29,27 @@ const routes = [
       },
     ],
   },
-  MainRouter,
+  {
+    path: "/",
+    component: () => import("@/views/Main/MainLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "Main",
+        component: () => import("@/views/Main/Main.vue"),
+      },
+      {
+        path: "/explore",
+        name: "Explore",
+        component: () => import("@/views/Main/Explore.vue"),
+      },
+      {
+        path: "/wishlists",
+        name: "Wishlists",
+        component: () => import("@/views/Main/Wishlists.vue"),
+      },
+    ],
+  },
   HomeRouter,
   ...EventsRouter,
   ...EventDetailRouter,

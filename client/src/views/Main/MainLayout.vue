@@ -14,9 +14,9 @@
 <script lang="ts">
   import { defineComponent } from "vue";
 
-  import NavbarMain from "../components/NavbarMain.vue";
-  import FooterSmallMain from "../components/footers/FooterSmallMain.vue";
-  import FooterBigMain from "../components/footers/FooterBigMain.vue";
+  import NavbarMain from "./components/NavbarMain.vue";
+  import FooterSmallMain from "./components/FooterSmallMain.vue";
+  import FooterBigMain from "./components/FooterBigMain.vue";
 
   export default defineComponent({
     name: "MainLayout",
@@ -46,5 +46,5 @@
     main {
       padding: 1rem 0.5rem;
     }
-  } ;
+  }
 </style>

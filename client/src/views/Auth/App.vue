@@ -9,7 +9,7 @@
 <script lang="ts">
   import { defineComponent } from "vue";
 
-  import Auth from "../Auth.vue";
+  import Auth from "./Auth.vue";
 
   export default defineComponent({
     components: {

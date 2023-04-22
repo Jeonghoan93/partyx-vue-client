@@ -12,9 +12,9 @@ const routes: RouteRecordRaw[] = [
         meta: {},
       },
       {
-        path: 'profile',
+        path: 'users',
         name: 'UserProfile',
-        component: () => import('pages/UserProfile.vue'),
+        component: () => import('pages/UserTable.vue'),
         meta: {},
       },
     ],
