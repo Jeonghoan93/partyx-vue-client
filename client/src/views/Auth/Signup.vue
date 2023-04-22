@@ -56,7 +56,7 @@
 </template>
 
 <script lang="ts">
-  import api from "../../../services/api";
+  import api from "../../services/api";
 
   export default {
     data() {
@@ -76,7 +76,7 @@
         }
 
         try {
-          const res = await api.post("/users/register", {
+          const res = await api.post("/auth/signup", {
             firstName: this.firstName,
             lastName: this.lastName,
             email: this.email,

@@ -79,7 +79,7 @@
         delete api.defaults.headers.common["Authorization"];
 
         // Redirect to the login page
-        router.push("/login");
+        router.push("/auth/login");
       };
 
       return {

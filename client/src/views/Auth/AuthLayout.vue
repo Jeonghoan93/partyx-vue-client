@@ -13,7 +13,7 @@
 
 <script lang="ts">
   import { defineComponent } from "vue";
-  import Navbar from "../components/Navbar.vue";
+  import Navbar from "./components/Navbar.vue";
 
   export default defineComponent({
     name: "AuthLayout",
@@ -31,7 +31,7 @@
     background-position: center;
     background-size: cover;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url("../assets/bg.png");
+      url("../../assets/bgAuth.png");
 
     margin: 0 auto;
   }
@@ -44,5 +44,5 @@
     main {
       padding: 1rem 0.5rem;
     }
-  } ;
+  }
 </style>

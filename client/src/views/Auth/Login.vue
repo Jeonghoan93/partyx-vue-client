@@ -3,9 +3,9 @@
     <div class="login">
       <h1>Welcome back</h1>
       <form @submit.prevent="login">
-        <!-- success message -->
-        <div v-if="successMessage" class="success-message">
-          {{ successMessage }}
+        <!-- message -->
+        <div v-if="Message" class="success-message">
+          {{ Message }}
         </div>
         <div class="input-group">
           <label for="email">Email</label>
@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-  import api from "../../../services/api";
+  import api from "../../services/api";
   import { defineComponent, ref, Ref } from "vue";
   import { useStore } from "vuex";
   import { useRouter } from "vue-router";
@@ -34,51 +34,40 @@
       const router = useRouter();
       const email: Ref<string> = ref("");
       const password: Ref<string> = ref("");
-      const successMessage: Ref<string> = ref("");
+      const Message: Ref<string> = ref("");
 
       const login = async () => {
         try {
-          const res = await api.post("/api/users/login", {
+          const res = await api.post<{ token: string }>("/auth/login", {
             email: email.value,
             password: password.value,
           });
 
-          console.log(res.data);
+          const { token } = res.data;
 
-          // Save the token and user data in local storage
-          localStorage.setItem("token", res.data.token);
-
-          // Set the Authorization header for the axios instance
-          api.defaults.headers.common[
-            "Authorization"
-          ] = `Bearer ${res.data.token}`;
-
-          // get user profile
-          const profileRes = await api.get("/api/users/profile");
-
-          console.log(profileRes.data);
-
-          // save the user profile data in local storage
-          localStorage.setItem("user", JSON.stringify(profileRes.data.user));
-          localStorage.setItem("firstName", profileRes.data.user.firstName);
+          // store the token in local storage
+          localStorage.setItem("token", token);
 
           // set the success message
-          successMessage.value = "Logged in successfully!";
+          Message.value = "Logged in successfully!";
 
           // Redirect to the home page
           setTimeout(() => {
-            store.commit("setFirstName", profileRes.data.user.firstName);
             store.commit("setUserLoggedIn", true);
+            console.log("Redirecting...");
             router.push("/");
           }, 2000);
         } catch (error) {
           console.error("Error during login: ", error);
+
+          // Display an error message
+          Message.value = "Invalid credentials. Please try again.";
         }
       };
       return {
         email,
         password,
-        successMessage,
+        Message,
         login,
       };
     },
@@ -153,6 +142,11 @@
     background-color: #2680f0;
   }
   .success-message {
+    color: rgb(37, 180, 37);
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .fail-message {
     color: rgb(37, 180, 37);
     font-weight: bold;
     margin-bottom: 1rem;
