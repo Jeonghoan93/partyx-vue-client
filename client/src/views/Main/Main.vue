@@ -10,7 +10,7 @@
 
 <script lang="ts">
   import { defineComponent } from "vue";
-  import FooterBigMain from "./components/FooterBigMain.vue";
+  import FooterBigMain from "../../components/FooterBigMain.vue";
 
   export default defineComponent({
     name: "Main",

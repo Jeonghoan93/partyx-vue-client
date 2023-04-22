@@ -32,7 +32,7 @@
 <script lang="ts">
   import { defineComponent, ref, onMounted, onUnmounted, computed } from "vue";
   import { useStore } from "vuex";
-  import api from "../../../services/api";
+  import api from "../services/api";
   import { useRouter, useRoute } from "vue-router";
 
   import SearchBar from "./SearchBar.vue";

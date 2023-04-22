@@ -83,7 +83,7 @@
   .icon.active {
     filter: brightness(0) saturate(130%) invert(146%) sepia(108%)
       saturate(1067%) hue-rotate(177deg) brightness(300%) contrast(144%);
-    font-weight: 900;
+    font-weight: 800;
   }
 
   @media (min-width: 744px) {

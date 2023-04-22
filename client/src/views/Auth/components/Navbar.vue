@@ -78,7 +78,7 @@
     text-decoration: none;
     border: none;
     font-size: 14pt;
-    font-weight: 900;
+    font-weight: 800;
     color: rgb(255, 255, 255);
     padding: 0.5rem 0.9rem;
 

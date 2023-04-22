@@ -50,6 +50,7 @@
           />
         </div>
         <button type="submit">Register</button>
+        <button @click="redirectToLogin">Login</button>
       </form>
     </div>
   </div>
@@ -69,6 +70,9 @@
       };
     },
     methods: {
+      redirectToLogin() {
+        this.$router.push("/auth/login");
+      },
       async register() {
         if (this.password !== this.confirmPassword) {
           alert("Passwords do not match");

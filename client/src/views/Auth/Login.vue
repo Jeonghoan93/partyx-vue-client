@@ -16,6 +16,7 @@
           <input type="password" id="password" v-model="password" required />
         </div>
         <button type="submit">Login</button>
+        <button @click="redirectToSignUp">Sign Up</button>
       </form>
     </div>
   </div>
@@ -29,6 +30,11 @@
 
   // useStore() function call inside the setup() function and defines the email, password, and successMessage as reactive refs.
   export default defineComponent({
+    methods: {
+      redirectToSignUp() {
+        this.$router.push("/auth/signup");
+      },
+    },
     setup() {
       const store = useStore();
       const router = useRouter();

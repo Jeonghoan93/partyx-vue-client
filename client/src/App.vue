@@ -13,13 +13,18 @@
 <style>
   html,
   body {
-    font-family: "Roboto", sans-serif; /* You can use any font family you prefer */
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
   }
-
   #app {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -1,24 +1,30 @@
 <template>
-  <div class="app-layout">
-    <Navbar />
+  <div>
+    <div class="app-layout">
+      <Navbar />
 
-    <main>
-      <router-view />
-    </main>
-    <footer>
-      <!-- footer contents -->
-    </footer>
+      <main>
+        <router-view />
+      </main>
+
+      <FooterSmallMain />
+    </div>
+    <FooterBigMain />
   </div>
 </template>
 
 <script lang="ts">
   import { defineComponent } from "vue";
   import Navbar from "./components/Navbar.vue";
+  import FooterSmallMain from "../../components/FooterSmallMain.vue";
+  import FooterBigMain from "../../components/FooterBigMain.vue";
 
   export default defineComponent({
     name: "AuthLayout",
     components: {
       Navbar,
+      FooterBigMain,
+      FooterSmallMain,
     },
   });
 </script>

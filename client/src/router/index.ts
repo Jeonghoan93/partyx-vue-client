@@ -11,11 +11,6 @@ const routes = [
     component: () => import("@/views/Auth/AuthLayout.vue"),
     children: [
       {
-        path: "",
-        name: "Auth",
-        component: () => import("@/views/Auth/Auth.vue"),
-      },
-      {
         path: "login",
         name: "Login",
         component: () => import("@/views/Auth/Login.vue"),
