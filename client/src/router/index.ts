@@ -1,13 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import HomeRouter from "@/views/Home/router";
-import EventsRouter from "@/views/Events/router";
-import EventDetailRouter from "@/views/EventDetail/router";
 import HostDashboardRouter from "@/views/HostDashboard/router";
 import EventFormRouter from "@/views/EventForm/router";
 import EditEventRouter from "@/views/EditEvent/router";
 
 const routes = [
+  // Auth
   {
     path: "/auth",
     component: () => import("@/views/Auth/AuthLayout.vue"),
@@ -29,9 +27,10 @@ const routes = [
       },
     ],
   },
+  // Main
   {
     path: "/",
-    component: () => import("@/views/Main/MainLayout.vue"),
+    component: () => import("@/components/Layout.vue"),
     children: [
       {
         path: "",
@@ -50,9 +49,31 @@ const routes = [
       },
     ],
   },
-  HomeRouter,
-  ...EventsRouter,
-  ...EventDetailRouter,
+  // Events
+  {
+    path: "/events",
+    name: "/Events",
+    component: () => import("@/views/Events/Events.vue"),
+    children: [
+      {
+        path: ":id",
+        name: "EventDetail",
+        component: () => import("@/views/Events/EventDetail.vue"),
+      },
+    ],
+  },
+  // Home
+  {
+    path: "/home",
+    component: () => import("@/views/Home/HomeLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "Home",
+        component: () => import("@/views/Home/Home.vue"),
+      },
+    ],
+  },
   ...HostDashboardRouter,
   ...EventFormRouter,
   ...EditEventRouter,

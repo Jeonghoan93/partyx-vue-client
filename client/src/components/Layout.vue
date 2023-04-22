@@ -14,9 +14,9 @@
 <script lang="ts">
   import { defineComponent } from "vue";
 
-  import NavbarMain from "./components/NavbarMain.vue";
-  import FooterSmallMain from "./components/FooterSmallMain.vue";
-  import FooterBigMain from "./components/FooterBigMain.vue";
+  import NavbarMain from "../views/Main/components/NavbarMain.vue";
+  import FooterSmallMain from "../views/Main/components/FooterSmallMain.vue";
+  import FooterBigMain from "../views/Main/components/FooterBigMain.vue";
 
   export default defineComponent({
     name: "MainLayout",

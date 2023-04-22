@@ -2,9 +2,7 @@
   <div class="events">
     <h1>Events</h1>
     <SearchBar />
-    <div class="event-list">
-      <!-- eventcard -->
-    </div>
+    <div class="event-list">eventCard</div>
   </div>
 </template>
 
