@@ -2,8 +2,8 @@
   <footer v-if="isMobile" class="footerMobile">
     <div
       class="footerContainer"
-      @click="changePage('/explore')"
-      :class="{ active: isActive('/explore') }"
+      @click="changePage('/today')"
+      :class="{ active: isActive('/today') }"
     >
       <div class="icon">
         <font-awesome-icon icon="fa-solid fa-table-list" />
@@ -14,8 +14,8 @@
     </div>
     <div
       class="footerContainer"
-      @click="changePage('/wishlists')"
-      :class="{ active: isActive('/wishlists') }"
+      @click="changePage('/clubs')"
+      :class="{ active: isActive('/clubs') }"
     >
       <div class="icon">
         <font-awesome-icon icon="fa-solid fa-house-circle-check" />
@@ -26,8 +26,8 @@
     </div>
     <div
       class="footerContainer"
-      @click="changePage('/auth/login')"
-      :class="{ active: isActive('/auth/login') }"
+      @click="changePage('/festivals')"
+      :class="{ active: isActive('/festivals') }"
     >
       <div class="icon">
         <font-awesome-icon icon="fa-solid fa-tent" />
@@ -38,8 +38,8 @@
     </div>
     <div
       class="footerContainer"
-      @click="changePage('/auth/login')"
-      :class="{ active: isActive('/auth/login') }"
+      @click="changePage('/amateur')"
+      :class="{ active: isActive('/amateur') }"
     >
       <div class="icon">
         <font-awesome-icon icon="fa-solid fa-house" />
@@ -50,8 +50,8 @@
     </div>
     <div
       class="footerContainer"
-      @click="changePage('/explore')"
-      :class="{ active: isActive('/explore') }"
+      @click="changePage('/search')"
+      :class="{ active: isActive('/search') }"
     >
       <div class="icon">
         <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
@@ -96,23 +96,22 @@
     left: 0;
     right: 0;
     width: 100%;
-    background-color: rgba(30, 35, 35, 0.8);
+    background-color: rgba(30, 35, 35, 0.9);
     padding: 0;
     z-index: 99;
   }
 
   .footerContainer {
-    margin-top: 1rem;
+    margin-top: 0.7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: rgb(186, 180, 180);
-
     font-weight: 400;
+    cursor: pointer;
   }
   .icon {
     font-size: 12pt;
-    cursor: pointer;
   }
   .title {
     font-size: 8pt;

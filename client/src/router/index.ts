@@ -5,6 +5,68 @@ import EventFormRouter from "@/views/EventForm/router";
 import EditEventRouter from "@/views/EditEvent/router";
 
 const routes = [
+  // Main
+  {
+    path: "/",
+    component: () => import("@/components/Layout.vue"),
+    children: [
+      {
+        path: "",
+        name: "Main",
+        component: () => import("@/views/Main/Main.vue"),
+      },
+      {
+        path: "/today",
+        children: [
+          {
+            path: "",
+            name: "Today",
+            component: () => import("@/views/Main/Today.vue"),
+          },
+        ],
+      },
+      {
+        path: "/clubs",
+        children: [
+          {
+            path: "",
+            name: "Clubs",
+            component: () => import("@/views/Main/Clubs.vue"),
+          },
+        ],
+      },
+      {
+        path: "/festivals",
+        children: [
+          {
+            path: "",
+            name: "Festivals",
+            component: () => import("@/views/Main/festivals.vue"),
+          },
+        ],
+      },
+      {
+        path: "/amateur",
+        children: [
+          {
+            path: "",
+            name: "Amateur",
+            component: () => import("@/views/Main/Amateur.vue"),
+          },
+        ],
+      },
+      {
+        path: "/search",
+        children: [
+          {
+            path: "",
+            name: "Search",
+            component: () => import("@/views/Main/search.vue"),
+          },
+        ],
+      },
+    ],
+  },
   // Auth
   {
     path: "/auth",
@@ -19,28 +81,6 @@ const routes = [
         path: "signup",
         name: "Signup",
         component: () => import("@/views/Auth/Signup.vue"),
-      },
-    ],
-  },
-  // Main
-  {
-    path: "/",
-    component: () => import("@/components/Layout.vue"),
-    children: [
-      {
-        path: "",
-        name: "Main",
-        component: () => import("@/views/Main/Main.vue"),
-      },
-      {
-        path: "/explore",
-        name: "Explore",
-        component: () => import("@/views/Main/Explore.vue"),
-      },
-      {
-        path: "/wishlists",
-        name: "Wishlists",
-        component: () => import("@/views/Main/Wishlists.vue"),
       },
     ],
   },

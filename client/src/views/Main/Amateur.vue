@@ -1,12 +1,13 @@
 <template>
   <div class="explore">
     <p>
-      I changed my MainLayout to adopt lazy loading but these are not displaying
-      and console shows : runtime-core.esm-bundler.js:40 [Vue warn]: Invalid
-      VNode type: undefined (undefined) warn2 @ runtime-core.esm-bundler.js:40
-      patch @ runtime-core.esm-bundler.js:5128 componentUpdateFn @
-      runtime-core.esm-bundler.js:5656 run @ reactivity.esm-bundler.js:190
-      instance.update @ runtime-core.esm-bundler.js:5763 setupRenderEffect @
+      Amateurs I changed my MainLayout to adopt lazy loading but these are not
+      displaying and console shows : runtime-core.esm-bundler.js:40 [Vue warn]:
+      Invalid VNode type: undefined (undefined) warn2 @
+      runtime-core.esm-bundler.js:40 patch @ runtime-core.esm-bundler.js:5128
+      componentUpdateFn @ runtime-core.esm-bundler.js:5656 run @
+      reactivity.esm-bundler.js:190 instance.update @
+      runtime-core.esm-bundler.js:5763 setupRenderEffect @
       runtime-core.esm-bundler.js:5777 mountComponent @
       runtime-core.esm-bundler.js:5559 processComponent @
       runtime-core.esm-bundler.js:5517 patch @ runtime-core.esm-bundler.js:5119
@@ -113,7 +114,7 @@
   import { defineComponent } from "vue";
 
   export default defineComponent({
-    name: "Explore",
+    name: "Amateurs",
   });
 </script>
 
