@@ -4,10 +4,10 @@
       Party<span class="x">X</span>
     </router-link>
     <header class="nav-links">
-      <router-link v-if="!isLoggedIn()" class="router-link" to="/register">
+      <router-link v-if="!isLoggedIn()" class="router-link" to="/auth/signup">
         Sign up
       </router-link>
-      <router-link v-if="!isLoggedIn()" class="router-link" to="/login"
+      <router-link v-if="!isLoggedIn()" class="router-link" to="/auth/login"
         >Login</router-link
       >
       <router-link

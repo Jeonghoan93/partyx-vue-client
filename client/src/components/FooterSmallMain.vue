@@ -19,10 +19,10 @@
     <div
       class="icon"
       @click="changePage('/auth/login')"
-      :class="{ active: isActive('/login') }"
+      :class="{ active: isActive('/auth/login') }"
     >
       <font-awesome-icon icon="fa-solid fa-user" />
-      <p>Log in</p>
+      <p>User</p>
     </div>
   </footer>
 </template>
