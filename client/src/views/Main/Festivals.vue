@@ -1,7 +1,7 @@
 <template>
   <div class="explore">
     <p>
-      Clubs I changed my MainLayout to adopt lazy loading but these are not
+      Festivals I changed my MainLayout to adopt lazy loading but these are not
       displaying and console shows : runtime-core.esm-bundler.js:40 [Vue warn]:
       Invalid VNode type: undefined (undefined) warn2 @
       runtime-core.esm-bundler.js:40 patch @ runtime-core.esm-bundler.js:5128
