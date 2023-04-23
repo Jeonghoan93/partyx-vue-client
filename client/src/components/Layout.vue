@@ -15,7 +15,7 @@
   import { defineComponent } from "vue";
 
   import NavbarMain from "./Navbar.vue";
-  import FooterSmallMain from "./FooterSmallMain.vue";
+  import FooterSmallMain from "./FooterMobile.vue";
   import FooterBigMain from "./FooterBigMain.vue";
 
   export default defineComponent({

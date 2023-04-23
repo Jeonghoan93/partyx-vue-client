@@ -14,11 +14,22 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-/* add icons to the library */
-library.add(faPlus);
+import { faTableList } from "@fortawesome/free-solid-svg-icons";
+import { faHouseCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faTent } from "@fortawesome/free-solid-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
+
+/* Footer */
+library.add(faTableList);
+library.add(faHouseCircleCheck);
+library.add(faTent);
+library.add(faHouse);
+library.add(faMagnifyingGlass);
+
+/* Others */
 library.add(faUser);
 library.add(faHeart);
-library.add(faMagnifyingGlass);
+library.add(faPlus);
 
 createApp(App)
   .use(router)

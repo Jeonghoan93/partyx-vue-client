@@ -16,7 +16,7 @@
 <script lang="ts">
   import { defineComponent } from "vue";
   import Navbar from "./components/Navbar.vue";
-  import FooterSmallMain from "../../components/FooterSmallMain.vue";
+  import FooterSmallMain from "../../components/FooterMobile.vue";
   import FooterBigMain from "../../components/FooterBigMain.vue";
 
   export default defineComponent({

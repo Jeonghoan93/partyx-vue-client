@@ -1,28 +1,64 @@
 <template>
-  <footer v-if="isMobile" class="footerScreenSmall">
+  <footer v-if="isMobile" class="footerMobile">
     <div
-      class="icon"
+      class="footerContainer"
       @click="changePage('/explore')"
       :class="{ active: isActive('/explore') }"
     >
-      <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-      <p>Explore</p>
+      <div class="icon">
+        <font-awesome-icon icon="fa-solid fa-table-list" />
+      </div>
+      <div class="title">
+        <p>Today</p>
+      </div>
     </div>
     <div
-      class="icon"
+      class="footerContainer"
       @click="changePage('/wishlists')"
       :class="{ active: isActive('/wishlists') }"
     >
-      <font-awesome-icon icon="fa-solid fa-heart" />
-      <p>Wishlists</p>
+      <div class="icon">
+        <font-awesome-icon icon="fa-solid fa-house-circle-check" />
+      </div>
+      <div class="title">
+        <p>Clubs</p>
+      </div>
     </div>
     <div
-      class="icon"
+      class="footerContainer"
       @click="changePage('/auth/login')"
       :class="{ active: isActive('/auth/login') }"
     >
-      <font-awesome-icon icon="fa-solid fa-user" />
-      <p>User</p>
+      <div class="icon">
+        <font-awesome-icon icon="fa-solid fa-tent" />
+      </div>
+      <div class="title">
+        <p>Festivals</p>
+      </div>
+    </div>
+    <div
+      class="footerContainer"
+      @click="changePage('/auth/login')"
+      :class="{ active: isActive('/auth/login') }"
+    >
+      <div class="icon">
+        <font-awesome-icon icon="fa-solid fa-house" />
+      </div>
+      <div class="title">
+        <p>Amateur</p>
+      </div>
+    </div>
+    <div
+      class="footerContainer"
+      @click="changePage('/explore')"
+      :class="{ active: isActive('/explore') }"
+    >
+      <div class="icon">
+        <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+      </div>
+      <div class="title">
+        <p>Search</p>
+      </div>
     </div>
   </footer>
 </template>
@@ -51,7 +87,7 @@
 </script>
 
 <style scoped>
-  .footerScreenSmall {
+  .footerMobile {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -65,22 +101,28 @@
     z-index: 99;
   }
 
-  .icon {
+  .footerContainer {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: rgb(186, 180, 180);
-    cursor: pointer;
-    font-size: 9pt;
+
     font-weight: 400;
   }
+  .icon {
+    font-size: 12pt;
+    cursor: pointer;
+  }
+  .title {
+    font-size: 8pt;
+  }
 
-  .icon.active {
+  .footerContainer.active {
     color: pink;
   }
 
-  .icon.active {
+  .footerContainer.active {
     filter: brightness(0) saturate(130%) invert(146%) sepia(108%)
       saturate(1067%) hue-rotate(177deg) brightness(300%) contrast(144%);
     font-weight: 800;
