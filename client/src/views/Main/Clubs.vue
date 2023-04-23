@@ -120,6 +120,6 @@
 
 <style scoped>
   .explore {
-    color: rgb(16, 20, 20);
+    color: rgb(218, 236, 236);
   }
 </style>

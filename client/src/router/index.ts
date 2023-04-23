@@ -41,7 +41,7 @@ const routes = [
           {
             path: "",
             name: "Festivals",
-            component: () => import("@/views/Main/festivals.vue"),
+            component: () => import("@/views/Main/Festivals.vue"),
           },
         ],
       },

@@ -1,5 +1,5 @@
 <template>
-  <footer v-if="isMobile" class="footerMobile">
+  <footer v-show="isMobile" class="footer">
     <div
       class="footerContainer"
       @click="changePage('/today')"
@@ -64,14 +64,14 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from "vue";
+  import { defineComponent, onMounted, onUnmounted, ref } from "vue";
   import { RouteLocationRaw, useRouter } from "vue-router";
 
   export default defineComponent({
-    name: "FooterSmallMain",
+    name: "footer",
     setup() {
       const router = useRouter();
-      const isMobile = window.innerWidth <= 743;
+      const isMobile = ref(window.innerWidth <= 743);
 
       const changePage = (path: RouteLocationRaw) => {
         router.push(path);
@@ -81,13 +81,25 @@
         return router.currentRoute.value.path === path;
       };
 
+      const handleResize = () => {
+        isMobile.value = window.innerWidth <= 743;
+      };
+
+      onMounted(() => {
+        window.addEventListener("resize", handleResize);
+      });
+
+      onUnmounted(() => {
+        window.removeEventListener("resize", handleResize);
+      });
+
       return { isMobile, changePage, isActive };
     },
   });
 </script>
 
 <style scoped>
-  .footerMobile {
+  .footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -114,7 +126,7 @@
     font-size: 12pt;
   }
   .title {
-    font-size: 8pt;
+    font-size: 7pt;
   }
 
   .footerContainer.active {
@@ -125,11 +137,5 @@
     filter: brightness(0) saturate(130%) invert(146%) sepia(108%)
       saturate(1067%) hue-rotate(177deg) brightness(300%) contrast(144%);
     font-weight: 800;
-  }
-
-  @media (min-width: 744px) {
-    .footerScreenSmall {
-      display: none;
-    }
   }
 </style>

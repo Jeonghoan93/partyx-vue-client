@@ -5,9 +5,8 @@
       <main>
         <router-view />
       </main>
-      <FooterSmallMain />
+      <FooterMobile />
     </div>
-    <FooterBigMain />
   </div>
 </template>
 
@@ -15,15 +14,13 @@
   import { defineComponent } from "vue";
 
   import NavbarMain from "./Navbar.vue";
-  import FooterSmallMain from "./FooterMobile.vue";
-  import FooterBigMain from "./FooterBigMain.vue";
+  import FooterMobile from "./Footer.vue";
 
   export default defineComponent({
     name: "MainLayout",
     components: {
       NavbarMain,
-      FooterSmallMain,
-      FooterBigMain,
+      FooterMobile,
     },
     setup() {},
   });
@@ -31,10 +28,10 @@
 
 <style scoped>
   .app-layout {
+    background-color: rgb(33, 33, 33);
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
-
     margin: 0 auto;
   }
 
