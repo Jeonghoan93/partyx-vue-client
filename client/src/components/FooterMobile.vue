@@ -2,14 +2,14 @@
   <footer v-show="isMobile" class="footer">
     <div
       class="footerContainer"
-      @click="changePage('/today')"
-      :class="{ active: isActive('/today') }"
+      @click="changePage('/popular')"
+      :class="{ active: isActive('/popular') }"
     >
       <div class="icon">
         <font-awesome-icon icon="fa-solid fa-table-list" />
       </div>
       <div class="title">
-        <p>Today</p>
+        <p>Popular</p>
       </div>
     </div>
     <div
@@ -38,14 +38,14 @@
     </div>
     <div
       class="footerContainer"
-      @click="changePage('/amateur')"
-      :class="{ active: isActive('/amateur') }"
+      @click="changePage('/house')"
+      :class="{ active: isActive('/house') }"
     >
       <div class="icon">
         <font-awesome-icon icon="fa-solid fa-house" />
       </div>
       <div class="title">
-        <p>Amateur</p>
+        <p>House</p>
       </div>
     </div>
     <div

@@ -16,12 +16,12 @@ const routes = [
         component: () => import("@/views/Main/Main.vue"),
       },
       {
-        path: "/today",
+        path: "/popular",
         children: [
           {
             path: "",
-            name: "Today",
-            component: () => import("@/views/Main/Today.vue"),
+            name: "Popular",
+            component: () => import("@/views/Main/Popular.vue"),
           },
         ],
       },
@@ -46,12 +46,12 @@ const routes = [
         ],
       },
       {
-        path: "/amateur",
+        path: "/house",
         children: [
           {
             path: "",
-            name: "Amateur",
-            component: () => import("@/views/Main/Amateur.vue"),
+            name: "House",
+            component: () => import("@/views/Main/House.vue"),
           },
         ],
       },

@@ -1,7 +1,7 @@
 <template>
   <div class="explore">
-    <div class="clubs">
-      <Header headerText="Clubs" />
+    <div class="amateur">
+      <Header headerText="House" />
     </div>
 
     <div class="itemMain">
@@ -65,7 +65,7 @@
   import Header from "./components/Header.vue";
 
   export default defineComponent({
-    name: "Clubs",
+    name: "House",
     components: {
       Header,
     },
@@ -80,7 +80,7 @@
     color: rgb(209, 221, 221);
   }
 
-  .clubs {
+  .amateur {
     display: flex;
     flex-direction: column;
 

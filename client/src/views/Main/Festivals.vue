@@ -1,125 +1,218 @@
 <template>
   <div class="explore">
-    <p>
-      Festivals I changed my MainLayout to adopt lazy loading but these are not
-      displaying and console shows : runtime-core.esm-bundler.js:40 [Vue warn]:
-      Invalid VNode type: undefined (undefined) warn2 @
-      runtime-core.esm-bundler.js:40 patch @ runtime-core.esm-bundler.js:5128
-      componentUpdateFn @ runtime-core.esm-bundler.js:5656 run @
-      reactivity.esm-bundler.js:190 instance.update @
-      runtime-core.esm-bundler.js:5763 setupRenderEffect @
-      runtime-core.esm-bundler.js:5777 mountComponent @
-      runtime-core.esm-bundler.js:5559 processComponent @
-      runtime-core.esm-bundler.js:5517 patch @ runtime-core.esm-bundler.js:5119
-      mountChildren @ runtime-core.esm-bundler.js:5303 mountElement @
-      runtime-core.esm-bundler.js:5213 processElement @
-      runtime-core.esm-bundler.js:5196 patch @ runtime-core.esm-bundler.js:5116
-      mountChildren @ runtime-core.esm-bundler.js:5303 mountElement @
-      runtime-core.esm-bundler.js:5213 processElement @
-      runtime-core.esm-bundler.js:5196 patch @ runtime-core.esm-bundler.js:5116
-      componentUpdateFn @ runtime-core.esm-bundler.js:5656 run @
-      reactivity.esm-bundler.js:190 instance.update @
-      runtime-core.esm-bundler.js:5763 setupRenderEffect @
-      runtime-core.esm-bundler.js:5777 mountComponent @
-      runtime-core.esm-bundler.js:5559 processComponent @
-      runtime-core.esm-bundler.js:5517 patch @ runtime-core.esm-bundler.js:5119
-      componentUpdateFn @ runtime-core.esm-bundler.js:5729 run @
-      reactivity.esm-bundler.js:190 instance.update @
-      runtime-core.esm-bundler.js:5763 callWithErrorHandling @
-      runtime-core.esm-bundler.js:173 flushJobs @
-      runtime-core.esm-bundler.js:406 Promise.then (async) queueFlush @
-      runtime-core.esm-bundler.js:298 queuePostFlushCb @
-      runtime-core.esm-bundler.js:320 queueEffectWithSuspense @
-      runtime-core.esm-bundler.js:1604 scheduler @
-      runtime-core.esm-bundler.js:1838 triggerEffect @
-      reactivity.esm-bundler.js:400 triggerEffects @
-      reactivity.esm-bundler.js:390 triggerRefValue @
-      reactivity.esm-bundler.js:1021 (anonymous) @
-      reactivity.esm-bundler.js:1158 triggerEffect @
-      reactivity.esm-bundler.js:400 triggerEffects @
-      reactivity.esm-bundler.js:385 triggerRefValue @
-      reactivity.esm-bundler.js:1021 (anonymous) @
-      reactivity.esm-bundler.js:1158 triggerEffect @
-      reactivity.esm-bundler.js:400 triggerEffects @
-      reactivity.esm-bundler.js:385 triggerRefValue @
-      reactivity.esm-bundler.js:1021 set value @ reactivity.esm-bundler.js:1066
-      finalizeNavigation @ vue-router.mjs:3334 (anonymous) @ vue-router.mjs:3207
-      Promise.then (async) pushWithRedirect @ vue-router.mjs:3174 push @
-      vue-router.mjs:3099 install @ vue-router.mjs:3530 use @
-      runtime-core.esm-bundler.js:4399 (anonymous) @ main.ts:22
-      runtime-core.esm-bundler.js:40 [Vue warn]: Failed to resolve component:
-      AppLayout If this is a native custom element, make sure to exclude it from
-      component resolution via compilerOptions.isCustomElement. warn2 @
-      runtime-core.esm-bundler.js:40 resolveAsset @
-      runtime-core.esm-bundler.js:2905 resolveComponent @
-      runtime-core.esm-bundler.js:2854 _sfc_render @ App.vue:2
-      renderComponentRoot @ runtime-core.esm-bundler.js:914 componentUpdateFn @
-      runtime-core.esm-bundler.js:5649 run @ reactivity.esm-bundler.js:190
-      instance.update @ runtime-core.esm-bundler.js:5763 setupRenderEffect @
-      runtime-core.esm-bundler.js:5777 mountComponent @
-      runtime-core.esm-bundler.js:5559 processComponent @
-      runtime-core.esm-bundler.js:5517 patch @ runtime-core.esm-bundler.js:5119
-      componentUpdateFn @ runtime-core.esm-bundler.js:5656 run @
-      reactivity.esm-bundler.js:190 instance.update @
-      runtime-core.esm-bundler.js:5763 setupRenderEffect @
-      runtime-core.esm-bundler.js:5777 mountComponent @
-      runtime-core.esm-bundler.js:5559 processComponent @
-      runtime-core.esm-bundler.js:5517 patch @ runtime-core.esm-bundler.js:5119
-      mountChildren @ runtime-core.esm-bundler.js:5303 mountElement @
-      runtime-core.esm-bundler.js:5213 processElement @
-      runtime-core.esm-bundler.js:5196 patch @ runtime-core.esm-bundler.js:5116
-      mountChildren @ runtime-core.esm-bundler.js:5303 mountElement @
-      runtime-core.esm-bundler.js:5213 processElement @
-      runtime-core.esm-bundler.js:5196 patch @ runtime-core.esm-bundler.js:5116
-      mountChildren @ runtime-core.esm-bundler.js:5303 mountElement @
-      runtime-core.esm-bundler.js:5213 processElement @
-      runtime-core.esm-bundler.js:5196 patch @ runtime-core.esm-bundler.js:5116
-      componentUpdateFn @ runtime-core.esm-bundler.js:5656 run @
-      reactivity.esm-bundler.js:190 instance.update @
-      runtime-core.esm-bundler.js:5763 setupRenderEffect @
-      runtime-core.esm-bundler.js:5777 mountComponent @
-      runtime-core.esm-bundler.js:5559 processComponent @
-      runtime-core.esm-bundler.js:5517 patch @ runtime-core.esm-bundler.js:5119
-      componentUpdateFn @ runtime-core.esm-bundler.js:5729 run @
-      reactivity.esm-bundler.js:190 instance.update @
-      runtime-core.esm-bundler.js:5763 callWithErrorHandling @
-      runtime-core.esm-bundler.js:173 flushJobs @
-      runtime-core.esm-bundler.js:406 Promise.then (async) queueFlush @
-      runtime-core.esm-bundler.js:298 queuePostFlushCb @
-      runtime-core.esm-bundler.js:320 queueEffectWithSuspense @
-      runtime-core.esm-bundler.js:1604 scheduler @
-      runtime-core.esm-bundler.js:1838 triggerEffect @
-      reactivity.esm-bundler.js:400 triggerEffects @
-      reactivity.esm-bundler.js:390 triggerRefValue @
-      reactivity.esm-bundler.js:1021 (anonymous) @
-      reactivity.esm-bundler.js:1158 triggerEffect @
-      reactivity.esm-bundler.js:400 triggerEffects @
-      reactivity.esm-bundler.js:385 triggerRefValue @
-      reactivity.esm-bundler.js:1021 (anonymous) @
-      reactivity.esm-bundler.js:1158 triggerEffect @
-      reactivity.esm-bundler.js:400 triggerEffects @
-      reactivity.esm-bundler.js:385 triggerRefValue @
-      reactivity.esm-bundler.js:1021 set value @ reactivity.esm-bundler.js:1066
-      finalizeNavigation @ vue-router.mjs:3334 (anonymous) @ vue-router.mjs:3207
-      Promise.then (async) pushWithRedirect @ vue-router.mjs:3174 push @
-      vue-router.mjs:3099 install @ vue-router.mjs:3530 use @
-      runtime-core.esm-bundler.js:4399 (anonymous) @ main.ts:22
-      runtime-core.esm-bundler.js:40 [Vue warn]: Invalid VNode type: undefined
-      (undefined)
-    </p>
+    <div class="festivals">
+      <Header headerText="Festivals" />
+    </div>
+
+    <div class="itemMain">
+      <div class="itemList">
+        <div class="item">
+          <div class="desc">
+            <h2>name of event</h2>
+            <p>description or detail of the event</p>
+          </div>
+
+          <div class="imageBox">
+            Image
+
+            <div class="imageDesc">
+              <div class="itemImage">Image</div>
+              <div class="itemDesc">
+                <h2>name of event</h2>
+                <p>type of event</p>
+              </div>
+              <div class="itemBtn">
+                <button>Book</button>
+                <p>btn desc</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="items">
+      <div class="itemCard">
+        <div class="itemHead">
+          <h2>Item info</h2>
+          <span>See all</span>
+        </div>
+
+        <div class="itemList">
+          <div class="item">
+            <div class="itemImage">Image</div>
+
+            <div class="itemDesc">
+              <div class="desc">
+                <h2>name of event</h2>
+                <p>type of event</p>
+              </div>
+
+              <div class="btn">
+                <button>Book</button>
+                <p>btn desc</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
   import { defineComponent } from "vue";
+  import Header from "./components/Header.vue";
 
   export default defineComponent({
     name: "Festivals",
+    components: {
+      Header,
+    },
+    data() {
+      return {};
+    },
   });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .explore {
-    color: rgb(218, 236, 236);
+    color: rgb(209, 221, 221);
+  }
+
+  .festivals {
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid rgb(50, 51, 51);
+  }
+
+  .itemMain {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid rgb(50, 51, 51);
+
+    .itemList {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+
+        .itemDesc {
+          .desc {
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+              font-size: 17pt;
+              font-weight: 700;
+              user-select: none;
+            }
+
+            p {
+              font-size: 10pt;
+              font-weight: 400;
+              user-select: none;
+              color: rgb(174, 174, 168);
+            }
+          }
+        }
+
+        .imageBox {
+          display: flex;
+          flex-direction: column;
+          border: 1px solid rgb(50, 51, 51);
+          border-radius: 10px;
+          padding: 10px;
+
+          .imageDesc {
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .itemBtn {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .items {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .itemCard {
+      display: flex;
+      flex-direction: column;
+
+      .itemHead {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          font-size: 12pt;
+          font-weight: 700;
+          user-select: none;
+        }
+
+        span {
+          cursor: pointer;
+          font-size: 10pt;
+        }
+      }
+
+      .itemList {
+        display: flex;
+        flex-direction: column;
+
+        .item {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+
+          .itemImage {
+            display: flex;
+            padding: 50px;
+            border: 1px solid rgb(50, 51, 51);
+            border-radius: 10px;
+          }
+
+          .itemDesc {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+
+            border-bottom: 1px solid rgb(50, 51, 51);
+
+            .desc {
+              display: flex;
+              flex-direction: column;
+              padding: 10px;
+            }
+
+            .btn {
+              display: flex;
+              flex-direction: column;
+              padding: 10px;
+            }
+          }
+        }
+      }
+    }
   }
 </style>

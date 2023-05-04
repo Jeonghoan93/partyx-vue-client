@@ -1,9 +1,12 @@
 <template>
   <div class="home-container">
     <div class="welcome-message">
-      <h1>Socialize cheaply, <span>anytime & anywhere</span></h1>
+      <h1>Meet people <span>anytime</span></h1>
       <h2>Create a party event and earn cash</h2>
-      <button>Let's party</button>
+      <div class="btnContainer">
+        <button class="btn1">See nearby</button>
+        <button class="btn2">List your party</button>
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +37,12 @@
     align-items: center;
   }
 
+  .btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .welcome-message {
     text-align: center;
     color: #fff;
@@ -53,21 +62,35 @@
 
   h2 {
     font-size: 11pt;
-    opacity: 0.8;
+    opacity: 0.7;
     font-weight: 500;
     user-select: none;
   }
 
-  button {
+  .btn1 {
+    min-width: 180px;
     margin-top: 20px;
-    background-color: #1c9a42;
+    background-color: #0fa03b;
     text-decoration: none;
     border: none;
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: 600;
     color: white;
     padding: 0.5rem 1.4rem;
-    border-radius: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .btn2 {
+    min-width: 180px;
+    margin-top: 13px;
+    background-color: #2d608f;
+    text-decoration: none;
+    border: none;
+    font-size: 10pt;
+    font-weight: 600;
+    color: white;
+    padding: 0.5rem 1.4rem;
+    border-radius: 8px;
     cursor: pointer;
   }
 </style>

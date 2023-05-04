@@ -4,7 +4,15 @@
       <router-link class="party" to="/"> PartyX</router-link>
     </div>
 
-    <div class="auth" v-if="!isMobile">
+    <div class="searchBar">
+      <SearchBar v-if="isActive" />
+    </div>
+
+    <div class="list">
+      <ListParty v-if="isActive" />
+    </div>
+
+    <div class="auth" v-show="!isMobile">
       <router-link
         v-show="!isActive && !isLoggedIn()"
         class="router-link"
@@ -27,26 +35,18 @@
       >
     </div>
 
-    <div @click="openModal" class="menu" v-if="isMobile">
-      <font-awesome-icon v-if="!showModal" icon="fa-solid fa-bars" />
-      <font-awesome-icon v-else icon="fa-solid fa-xmark" />
+    <div class="menu" v-show="isMobile">
+      <font-awesome-icon icon="fa-solid fa-bars" />
     </div>
   </nav>
 </template>
 
 <script lang="ts">
-  import {
-    defineComponent,
-    inject,
-    ref,
-    Ref,
-    onMounted,
-    onUnmounted,
-    computed,
-  } from "vue";
+  import { defineComponent, ref, onMounted, onUnmounted, computed } from "vue";
   import { useStore } from "vuex";
   import api from "../services/api";
   import { useRouter, useRoute } from "vue-router";
+
   import SearchBar from "./SearchBar.vue";
   import ListParty from "./ListParty.vue";
 
@@ -64,20 +64,6 @@
       const route = useRoute();
       const isActive = computed(() => active.value || route.path !== "/");
       const isMobile = ref(window.innerWidth <= 743);
-
-      const showModal = inject("showModal") as Ref<boolean>;
-
-      const openModal = () => {
-        // if (showModal.value) {
-        //   showModal.value = false;
-        //   return;
-        // } else {
-        //   showModal.value = true;
-        // }
-        // is the same as:
-
-        showModal.value = !showModal.value;
-      };
 
       const isLoggedIn = () => store.state.userLoggedIn;
 
@@ -120,8 +106,6 @@
         handleLogout,
         isActive,
         isMobile,
-        openModal,
-        showModal,
       };
     },
   });

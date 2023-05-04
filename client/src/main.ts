@@ -18,6 +18,8 @@ import { faTableList } from "@fortawesome/free-solid-svg-icons";
 import { faHouseCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { faTent } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 /* Footer */
 library.add(faTableList);
@@ -30,6 +32,8 @@ library.add(faMagnifyingGlass);
 library.add(faUser);
 library.add(faHeart);
 library.add(faPlus);
+library.add(faBars);
+library.add(faXmark);
 
 createApp(App)
   .use(router)

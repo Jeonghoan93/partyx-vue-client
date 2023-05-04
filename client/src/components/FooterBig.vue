@@ -2,7 +2,7 @@
   <footer v-show="!isMobile" class="footer">
     <div class="footerContainer">
       <div class="title">
-        <p>© PartyX</p>
+        <p>© PartyX 2020-2023</p>
       </div>
     </div>
     <div class="footerContainer" @click="changePage('/clubs')">
