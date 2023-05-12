@@ -1,103 +1,58 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title> PartyX Internal </q-toolbar-title>
-
-        <div>v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
+  <q-layout view="lHh Lpr lFf" class="bg-grey-2">
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
+      <bhl-menu v-if="isBHL" @toggle="menuCompressed = !menuCompressed" />
+      <app-menu v-else @toggle="menuCompressed = !menuCompressed" />
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <q-header
+        square
+        flat
+        class="shadow-2 bg-grey-9 text-white q-py-xs header-bottom-spacing"
+      >
+        <q-toolbar>
+          <q-btn flat dense round icon="home" aria-label="Menu" :to="{}" />
+
+          <q-space />
+
+          <div class="search-width-container relative-position">
+            <SearchBar />
+          </div>
+
+          <q-space />
+
+          <q-btn flat dense round icon="power_settings_new" @click="logout" />
+        </q-toolbar>
+      </q-header>
+
+      <div class="row justify-center">
+        <router-view class="router-view" :key="$route.path" />
+      </div>
     </q-page-container>
   </q-layout>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import EssentialLink from '../components/EssentialLink.vue';
-import PageLink from '../components/PageLink.vue';
-
-const linksList = [
-  {
-    title: 'Users',
-    caption: 'quasar.dev',
-    icon: 'people',
-    path: '/users',
-    count: 5,
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-];
+import SearchBar from 'src/components/layout/search/SearchBar.vue';
+import AppMenu from 'src/components/layout/menu/AppMenu.vue';
 
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink,
+    SearchBar,
+    AppMenu,
+  },
+  data() {
+    return {};
   },
 
   setup() {
     const leftDrawerOpen = ref(false);
 
     return {
-      essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
@@ -106,3 +61,21 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.router-view {
+  width: 100%;
+  max-width: 1540px;
+}
+
+.header-bottom-spacing {
+  padding-bottom: 30px;
+}
+
+.search-width-container {
+  padding-right: 140px;
+  width: 970px;
+  min-width: 850px;
+  padding-left: 10px;
+}
+</style>
