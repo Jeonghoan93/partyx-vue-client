@@ -1,18 +1,9 @@
-import { store } from 'quasar/wrappers';
-import { createPinia } from 'pinia';
-import { Router } from 'vue-router';
+import { createStore } from 'vuex';
 
-declare module 'pinia' {
-  export interface PiniaCustomProperties {
-    readonly router: Router;
-  }
-}
+import users from './modules/users';
 
-export default store((/* { ssrContext } */) => {
-  const pinia = createPinia();
-
-  // You can add Pinia plugins here
-  // pinia.use(SomePiniaPlugin)
-
-  return pinia;
+export default createStore({
+  modules: {
+    users,
+  },
 });
